@@ -1,3 +1,12 @@
+# PCA Analysis
+install.packages("FactoMineR")
+install.packages("factoextra")
+install.packages("missMDA")
+
+library(FactoMineR)
+library(factoextra)
+library(missMDA)
+
 setwd("C:/Users/ehtis/OneDrive - New Mexico State University/SUNNY/Research Projects/Mechanical Harvest Paper/Phenotype manuscript/PCA")
 #import data set, adjusted means
 data <- read.csv("mydata.csv")
@@ -28,7 +37,7 @@ loadings <- res.pca$var$coord
 # Extract correlation coefficients (R^2) for each principal component separately
 R2_values <- res.pca$var$cor^2
 write.csv(R2_values, file = "R2_values.csv", row.names = FALSE)
-# Extract eigenvectors
+# Extract eigen vectors
 eigen_vectors <- res.pca$svd$V
 write.csv(eigen_vectors, file = "eigen_vectors.csv", row.names = FALSE)
 #Scree plot
@@ -49,6 +58,7 @@ variance_df <- data.frame(
   Variance = eig[, 2],  # Percentage of variance explained
   CumulativeVariance = eig[, 3]  # Cumulative percentage of variance
 )
+
 # Plot the cumulative variance explained
 variance_plot <- ggplot(variance_df, aes(x = Component)) +
   geom_line(aes(y = Variance, color = "Individual"), size = 1) +
@@ -79,6 +89,7 @@ variance_plot <- ggplot(variance_df, aes(x = Component)) +
     axis.ticks.length = unit(0.15, "cm"),   # Length of the minor ticks
     axis.ticks = element_line(color = "black")  # Color of the minor ticks
   )
+plot(variance_plot)
 ggsave("scree_plot.png", plot = variance_plot, width = 10, height = 6, dpi = 600, bg = "white")
 
 # Create Biplot Genotype by Descriptor
