@@ -107,3 +107,71 @@ fviz_pca_biplot(res.pca,
                 title = "Genotype by Trait Biplot")
 ggsave("biplot_GxT.png", width = 8, height = 6, dpi = 600, bg = "white")
 
+
+# Create Biplot Genotype by Descriptor with destemming ratings and wihtout ellipse 
+fviz_pca_biplot(res.pca,
+                geom.ind = "point",
+                fill.ind = as.factor(data$Destemming),  # Factor for Destemming Quality
+                palette = c("black", "blue", "firebrick"),  # Colors for groups
+                pointshape = 21, pointsize = 2,  # Shape 21 allows fill color
+                addEllipses = FALSE,  # Add ellipses around groups
+                ellipse.type = "confidence",  # Confidence ellipses
+                col.var = "contrib",  # Color gradient for variable contributions
+                gradient.cols = c("black", "forestgreen", "firebrick"),  # Gradient colors
+                repel = TRUE,  # Repel overlapping labels
+                legend.title = list(fill = "Genotype", color = "Contrib"),  # Separate titles for fill and contrib gradients
+                title = "Genotype by Trait Biplot with Destemming Categories")
+
+# Save the biplot
+ggsave("biplot_GxT_without_ellipses.png", width = 8, height = 6, dpi = 600, bg = "white")
+
+
+# Create Biplot Genotype by Descriptor with destemming ratings with ellipse 
+fviz_pca_biplot(res.pca,
+                geom.ind = "point",
+                fill.ind = as.factor(data$Destemming),  # Factor for Destemming Quality
+                palette = c("black", "blue", "firebrick"),  # Colors for groups
+                pointshape = 21, pointsize = 2,  # Shape 21 allows fill color
+                addEllipses = TRUE,  # Add ellipses around groups
+                #ellipse.type = "confidence",  # Confidence ellipses
+                col.var = "contrib",  # Color gradient for variable contributions
+                gradient.cols = c("black", "forestgreen", "firebrick"),  # Gradient colors
+                repel = TRUE,  # Repel overlapping labels
+                legend.title = list(fill = "Genotype", color = "Contrib"),  # Separate titles for fill and contrib gradients
+                title = "Genotype by Trait Biplot with Destemming Categories")
+
+# Save the biplot
+ggsave("biplot_GxT_with_ellipses.png", width = 8, height = 6, dpi = 600, bg = "white")
+
+
+# Biplot with convex hull ellipses for each group
+fviz_pca_biplot(res.pca,
+                geom.ind = "point",
+                fill.ind = data$Destemming,  # Ensure Destemming is a factor
+                palette = c("black", "blue", "firebrick"),  # Colors for categories
+                pointshape = 21, pointsize = 2,  # Shape 21 allows fill color
+                addEllipses = TRUE,  # Add ellipses around groups (convex hulls)
+                col.var = "contrib",  # Color variables by contribution
+                gradient.cols = c("black", "forestgreen", "firebrick"),  # Gradient for variable contribution
+                repel = TRUE,  # Repel overlapping labels
+                legend.title = list(fill = "Genotype", color = "Contrib"),  # Legend title adjustments
+                title = "Genotype by Trait Biplot with Destemming Categories")
+
+ggsave("biplot_GxT_with_each_group_ellipses.png", width = 8, height = 6, dpi = 600, bg = "white")
+
+# Biplot with convex hull ellipses for each group using t-distribution-based ellipses
+fviz_pca_biplot(res.pca,
+                geom.ind = "point",
+                fill.ind = data$Destemming,
+                palette = c("black", "blue", "firebrick"),
+                pointshape = 21, pointsize = 2,
+                addEllipses = TRUE,
+                ellipse.type = "t",  # Use t-distribution-based ellipses
+                col.var = "contrib",
+                gradient.cols = c("black", "forestgreen", "firebrick"),
+                repel = TRUE,
+                legend.title = list(fill = "Genotype", color = "Contrib"),
+                title = "Genotype by Trait Biplot with Fruit Destemming Categories")
+
+ggsave("biplot_GxT_t-distribution-based_ellipses.png", width = 8, height = 6, dpi = 600, bg = "white")
+
