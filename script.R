@@ -1,3 +1,8 @@
+Author: Ehtisham Khokhar
+ehtishamshakeel@gmail.com
+New Mexico State University
+
+
 # PCA Analysis
 install.packages("FactoMineR")
 install.packages("factoextra")
