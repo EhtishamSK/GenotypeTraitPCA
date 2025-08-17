@@ -27,8 +27,8 @@ This R script performs **Principal Component Analysis (PCA)** on phenotypic data
 
 ### Visualizations
 
-- **Scree Plot**  
-  Displays the variance explained by each principal component, highlighting the most informative components.  
+- **Cumulative Variance Plot**  
+  Shows the proportion of variance explained cumulatively by the principal components, often integrated with the scree plot.
 
   ![Scree Plot](scree_plot.png)
 
@@ -37,8 +37,6 @@ This R script performs **Principal Component Analysis (PCA)** on phenotypic data
 
   ![Genotype by Trait PCA Biplot](Genotype_by_Trait_PCA_Biplot.png)
 
-- **Cumulative Variance Plot**  
-  Shows the proportion of variance explained cumulatively by the principal components, often integrated with the scree plot.
 
 All visualizations are saved as **high-resolution PNG files** for publication or further analysis.
 
