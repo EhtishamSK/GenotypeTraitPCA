@@ -1,32 +1,55 @@
 ## Principal Component Analysis (PCA) of Phenotypic Data
 
-This R script performs **Principal Component Analysis (PCA)** on phenotypic data to explore the underlying structure of traits across a set of genotypes.
-
-### Workflow
-1. **Load libraries** and import a dataset containing adjusted means.  
-2. **Preprocessing**: Exclude the first column of the dataset to focus on trait variables.  
-3. **PCA computation**: Conducted using the `PCA` function from the **FactoMineR** package, with variables standardized.  
-4. **Extract outputs**:  
-   - Eigenvalues  
-   - Trait contributions to the principal components  
-   - Loadings  
-   - Correlation coefficients  
-   - Eigenvectors  
-   These are saved as **CSV files** for further analysis.
-
-### Visualizations
-- **Scree plot**: Displays the variance explained by each principal component.  
-
-  ![Scree Plot](scree_plot.png)
-
-- **Biplot**: Illustrates the relationship between genotypes and traits.  
-
-  ![Genotype by Trait PCA Biplot](Genotype_by_Trait_PCA_Biplot.png)
-
-- **Cumulative variance plot**: Shows the proportion of variance explained by the principal components (often integrated with the scree plot).
-
-All plots (scree plot, biplot, cumulative variance plot) are saved as **PNG files**.
+This R script performs **Principal Component Analysis (PCA)** on phenotypic data to explore the underlying structure and relationships of traits across a set of genotypes.
 
 ---
 
-This workflow enhances understanding of the dataset’s structure and the contribution of traits to the observed variation.
+### Workflow
+
+1. **Load Libraries & Data**  
+   Load required R packages (`FactoMineR`, `factoextra`, `missMDA`, `ggplot2`) and import the dataset containing adjusted means.
+
+2. **Preprocessing**  
+   Exclude the first column (typically genotype IDs) to focus on trait variables.
+
+3. **PCA Computation**  
+   Conduct PCA using the `PCA()` function from **FactoMineR**, with variables standardized to ensure comparability.
+
+4. **Extract Results**  
+   Key outputs are extracted and saved as CSV files for further analysis:  
+   - Eigenvalues  
+   - Trait contributions to principal components  
+   - Loadings  
+   - Correlation coefficients (R²)  
+   - Eigenvectors  
+
+---
+
+### Visualizations
+
+- **Scree Plot**  
+  Displays the variance explained by each principal component, highlighting the most informative components.  
+
+  ![Scree Plot](scree_plot.png)
+
+- **Genotype × Trait Biplot**  
+  Illustrates the relationships between genotypes and traits, with contributions of each trait indicated by color or size.  
+
+  ![Genotype by Trait PCA Biplot](Genotype_by_Trait_PCA_Biplot.png)
+
+- **Cumulative Variance Plot**  
+  Shows the proportion of variance explained cumulatively by the principal components, often integrated with the scree plot.
+
+All visualizations are saved as **high-resolution PNG files** for publication or further analysis.
+
+---
+
+### Summary
+This workflow provides a comprehensive approach to:  
+- Understand the underlying structure of traits  
+- Identify the most influential traits  
+- Visualize genotype-trait relationships  
+- Support downstream analyses such as clustering, GWAS interpretation, or breeding decisions
+
+By combining numerical results and visualizations, users can gain deep insights into the phenotypic dataset.
+
