@@ -16,12 +16,10 @@ This R script performs **Principal Component Analysis (PCA)** on phenotypic data
 
 ### Visualizations
 - **Scree plot**: Displays the variance explained by each principal component.  
-  Example reference: [HortScience Scree Plot Example](https://journals.ashs.org/view/journals/hortsci/57/12/article-p1507.xml)  
 
   ![Scree Plot](scree_plot.png)
 
 - **Biplot**: Illustrates the relationship between genotypes and traits.  
-  Example reference: [Nature PCA Biplot Example](https://www.nature.com/articles/s41598-025-94819-z/figures/5)  
 
   ![Genotype by Trait PCA Biplot](Genotype_by_Trait_PCA_Biplot.png)
 
