@@ -1,4 +1,4 @@
-## Principal Component Analysis (PCA) of Phenotypic Data
+## Phenotypic PCA and Genotype-Trait Biplots
 
 This R script performs **Principal Component Analysis (PCA)** on phenotypic data to explore the underlying structure and relationships of traits across a set of genotypes.
 
