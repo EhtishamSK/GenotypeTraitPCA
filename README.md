@@ -15,11 +15,20 @@ This R script performs **Principal Component Analysis (PCA)** on phenotypic data
    These are saved as **CSV files** for further analysis.
 
 ### Visualizations
-- **Scree plot**: Displays the variance explained by each principal component. See an example of how cumulative variance and individual component contributions are depicted in this **variance plot**: [see example](https://journals.ashs.org/view/journals/hortsci/57/12/article-p1507.xml)  
-- **Biplot**: Illustrates the relationship between genotypes and traits. Traits’ contributions and genotypic relationships are visualized in a **PCA biplot**: [see example](https://www.nature.com/articles/s41598-025-94819-z/figures/5)  
-- **Cumulative variance plot**: Also included to provide insight into the proportion of variance explained by the principal components (often shown alongside or integrated into the scree plot).
+- **Scree plot**: Displays the variance explained by each principal component.  
+  Example reference: [HortScience Scree Plot Example](https://journals.ashs.org/view/journals/hortsci/57/12/article-p1507.xml)  
+
+  ![Scree Plot](scree plot.png)
+
+- **Biplot**: Illustrates the relationship between genotypes and traits.  
+  Example reference: [Nature PCA Biplot Example](https://www.nature.com/articles/s41598-025-94819-z/figures/5)  
+
+  ![Genotype by Trait PCA Biplot](Genotype by trait PCA Biplot.png)
+
+- **Cumulative variance plot**: Shows the proportion of variance explained by the principal components (often integrated with the scree plot).
 
 All plots (scree plot, biplot, cumulative variance plot) are saved as **PNG files**.
 
-This workflow enhances understanding of the dataset’s structure and the contribution of traits to the observed variation.
+---
 
+This workflow enhances understanding of the dataset’s structure and the contribution of traits to the observed variation.
